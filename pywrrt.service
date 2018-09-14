@@ -1,0 +1,13 @@
+[Unit]
+Description=Python Watch, Restore and Remote Transfer (pyWRRT) - Python script to monitor a directory for specified archive files and restore said archive(s) before sending the restored files to a specified remote destination.
+After=network.target
+
+[Service]
+User=local-user
+Group=local-user
+Type=simple
+ExecStart=/opt/pywrrt/pywrrt.py --config-file /opt/pywrrt/pywrrt.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
